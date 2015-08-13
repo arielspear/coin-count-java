@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 import java.io.Console;
 import java.util.Arrays;
 
-public class AppTest {
+public class AppUnitTest {
 
   Console myConsole = System.console();
 
