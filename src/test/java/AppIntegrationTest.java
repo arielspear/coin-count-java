@@ -17,7 +17,16 @@ public class AppIntegrationTest extends FluentTest {
 
   @Test
   public void rootTest() {
-      goTo("http://localhost:4567/");
-      assertThat(pageSource()).contains("How many monies do you have?");
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("How many monies do you have?");
   }
+
+  @Test
+    public void inputTest() {
+      goTo("http://localhost:4567");
+      fill("#cents").with("234");
+      submit(".btn");
+      assertThat(pageSource()).contains("234 cent monies!");
+    }
+
 }

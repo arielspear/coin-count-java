@@ -22,6 +22,12 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/results.vtl");
 
+      String cents = request.queryParams("cents");
+      Integer valueInCents = Integer.parseInt(cents);
+
+      model.put("valueInCents", valueInCents);
+      model.put("cents", cents);
+
       return new ModelAndView(model, layout);
 
 
