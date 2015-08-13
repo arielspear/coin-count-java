@@ -26,6 +26,12 @@ public class App {
       dimes = dimes + 1;
     }
 
+
+    while (valueInCents >= 5 ) {
+      valueInCents = valueInCents - 5;
+      nickles = nickles + 1;
+    }
+
     int coins[] = {quarters, dimes, nickles, pennies};
 
     return coins;
