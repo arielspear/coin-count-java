@@ -9,7 +9,17 @@ public class App {
   }
 
   public Integer makeChange(Integer valueInCents){
-    Integer quarter = 0;
-    return quarter;
+
+    Integer quarters = 0;
+    Integer dimes = 0;
+    Integer nickles = 0;
+    Integer pennies = 0;
+
+
+    while (valueInCents >= 25) {
+     valueInCents = valueInCents - 25;
+     quarters = quarters + 1;
+    }
+    return quarters;
   }
 }
