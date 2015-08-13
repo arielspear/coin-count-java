@@ -6,10 +6,10 @@ import spark.template.velocity.VelocityTemplateEngine;
 public class App {
 
   public static void main(String[] args) {
-
   }
 
-  public Boolean methodName(String args){
-    return false;
+  public Integer makeChange(Integer valueInCents){
+    Integer quarter = 0;
+    return quarter;
   }
 }

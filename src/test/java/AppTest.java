@@ -2,11 +2,11 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class AppTest {
+  App testApp = new App();
 
   @Test
-  public void methodName_testDescription_expectedOutcome() {
-    App testApp = new App();
-    // eventually put your testing code here
-    assertEquals(true, testApp.methodName("hello"));
+  public void makeChange_ifMoneyIsGreaterThan25CentsAddQuarter_1() {
+    Integer quarters = 1;
+    assertEquals(quarters, testApp.makeChange(25));
   }
 }
