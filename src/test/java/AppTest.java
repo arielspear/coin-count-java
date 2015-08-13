@@ -26,4 +26,10 @@ public class AppTest {
     int[] result = {0,0,1,0};
     assertTrue(Arrays.equals(result,testApp.makeChange(5)));
   }
+
+  @Test
+  public void makeChange_ifMoneyIsGreaterThan1CentsAddPennies_3() {
+      int[] result = {0,0,0,3};
+      assertTrue(Arrays.equals(result,testApp.makeChange(3)));
+  }
 }
