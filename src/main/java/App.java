@@ -25,45 +25,57 @@ public class App {
       String cents = request.queryParams("cents");
       Integer valueInCents = Integer.parseInt(cents);
 
+
+      int[] savedCoins = makeChange(valueInCents);
+      int quarters = savedCoins[0];
+      int dimes = savedCoins[1];
+      int nickels = savedCoins[2];
+      int pennies = savedCoins[3];
+
       model.put("valueInCents", valueInCents);
-      model.put("cents", cents);
+      model.put("quarters", quarters);
+      model.put("dimes",dimes);
+      model.put("nickels", nickels);
+      model.put("pennies", pennies);
 
       return new ModelAndView(model, layout);
 
 
     }, new VelocityTemplateEngine());
+
   }
+  public static int[] makeChange(int valueInCents){
 
-  public int[] makeChange(int valueInCents){
-
-    int quarters = 0;
-    int dimes = 0;
-    int nickles = 0;
-    int pennies = 0;
+    int howManyQuarters = 0;
+    int howManyDimes = 0;
+    int howManyNickles = 0;
+    int howManyPennies = 0;
 
     while (valueInCents >= 25) {
       valueInCents = valueInCents - 25;
-      quarters = quarters + 1;
+      howManyQuarters = howManyQuarters + 1;
     }
 
     while (valueInCents >= 10 ) {
       valueInCents = valueInCents - 10;
-      dimes = dimes + 1;
+      howManyDimes = howManyDimes + 1;
     }
 
 
     while (valueInCents >= 5 ) {
       valueInCents = valueInCents - 5;
-      nickles = nickles + 1;
+      howManyNickles = howManyNickles + 1;
     }
 
     while (valueInCents >= 1 ) {
       valueInCents = valueInCents - 1;
-      pennies = pennies + 1;
+      howManyPennies = howManyPennies + 1;
     }
 
-    int coins[] = {quarters, dimes, nickles, pennies};
+    int coins[] = {howManyQuarters, howManyDimes, howManyNickles, howManyPennies};
 
     return coins;
+
   }
+
 }

@@ -24,9 +24,8 @@ public class AppIntegrationTest extends FluentTest {
   @Test
     public void inputTest() {
       goTo("http://localhost:4567");
-      fill("#cents").with("234");
+      fill("#cents").with("117");
       submit(".btn");
-      assertThat(pageSource()).contains("234 cent monies!");
+      assertThat(pageSource()).contains("117 cent monies! AKA 4 quarters, 1 dime, 1 nickel, and 2 pennies.");
     }
-
 }
