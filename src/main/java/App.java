@@ -1,4 +1,6 @@
 import java.io.Console;
+import java.util.Map;
+import java.util.HashMap;
 import static spark.Spark.*;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
@@ -7,6 +9,23 @@ public class App {
 
   Console myConsole = System.console();
   public static void main(String[] args) {
+    String layout = "templates/layout.vtl";
+
+    get("/", (request, response) -> {
+      Map<String, Object> model = new HashMap<String,Object>();
+      model.put("template", "templates/home.vtl");
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/results", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/results.vtl");
+
+      return new ModelAndView(model, layout);
+
+
+    }, new VelocityTemplateEngine());
   }
 
   public int[] makeChange(int valueInCents){
