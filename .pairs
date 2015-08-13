@@ -1,7 +1,7 @@
 pairs:
-  as: Ashley Sullins
-  AS: Ariel Spear
+  as: Ashley Sullins; ashley.sullins
+  AS: Ariel Spear; simpleredfox
 
 email:
-  as: ashley.sullins@gmail.com
-  AS: simpleredfox@gmail.com
+  prefix: pair
+  domain: gmail.com
