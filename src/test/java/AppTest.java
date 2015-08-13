@@ -20,4 +20,10 @@ public class AppTest {
     int[] result = {0,2,0,0};
     assertTrue(Arrays.equals(result,testApp.makeChange(20)));
   }
+
+  @Test
+  public void makeChange_ifMoneyIsGreaterThan5CentsAddNickle_1() {
+    int[] result = {0,0,1,0};
+    assertTrue(Arrays.equals(result,testApp.makeChange(5)));
+  }
 }
